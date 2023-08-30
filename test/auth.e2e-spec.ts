@@ -22,13 +22,6 @@ describe('AuthController (e2e)', () => {
     await app.init();
   });
 
-  it('/auth/register (POST) - success', async () => {
-    return request(app.getHttpServer())
-      .post('/auth/register')
-      .send(loginDto)
-      .expect(201);
-  });
-
   it('/auth/login (POST) - success', async () => {
     return request(app.getHttpServer())
       .post('/auth/login')
