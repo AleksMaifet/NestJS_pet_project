@@ -36,7 +36,7 @@ describe('AuthController (e2e)', () => {
     return request(app.getHttpServer())
       .post('/auth/login')
       .send({ ...loginDto, password: '2' })
-      .expect(402, {
+      .expect(401, {
         statusCode: 401,
         message: 'Incorrect password',
         error: 'Unauthorized',
