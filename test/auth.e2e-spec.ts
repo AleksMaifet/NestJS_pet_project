@@ -47,7 +47,7 @@ describe('AuthController (e2e)', () => {
     return request(app.getHttpServer())
       .post('/auth/login')
       .send({ ...loginDto, login: 'aaa@a.ru' })
-      .expect(402, {
+      .expect(401, {
         statusCode: 401,
         message: 'User with this email was not found',
         error: 'Unauthorized',
